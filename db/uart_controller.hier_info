@@ -1,0 +1,54 @@
+|uart_controller
+clk => sync:SYNC_INST.clk
+rst => sync:SYNC_INST.rst
+rst => buffer_rx[0].ACLR
+rst => buffer_rx[1].ACLR
+rst => buffer_rx[2].ACLR
+rst => buffer_rx[3].ACLR
+rst => buffer_rx[4].ACLR
+rst => buffer_rx[5].ACLR
+rst => buffer_rx[6].ACLR
+rst => buffer_rx[7].ACLR
+rst => registro_rx[0].ACLR
+rst => registro_rx[1].ACLR
+rst => registro_rx[2].ACLR
+rst => registro_rx[3].ACLR
+rst => registro_rx[4].ACLR
+rst => registro_rx[5].ACLR
+rst => registro_rx[6].ACLR
+rst => registro_rx[7].ACLR
+rst => state~7.DATAIN
+rst => cont_bits[0].ENA
+rst => cont_pulses[5].ENA
+rst => cont_pulses[4].ENA
+rst => cont_pulses[3].ENA
+rst => cont_pulses[2].ENA
+rst => cont_pulses[1].ENA
+rst => cont_pulses[0].ENA
+rst => cont_bits[4].ENA
+rst => cont_bits[3].ENA
+rst => cont_bits[2].ENA
+rst => cont_bits[1].ENA
+rx => state.DATAA
+rx => registro_rx.DATAB
+rx => state.OUTPUTSELECT
+rx => state.OUTPUTSELECT
+rx => state.OUTPUTSELECT
+rx => state.OUTPUTSELECT
+rx => state.DATAA
+caracter[0] << buffer_rx[0].DB_MAX_OUTPUT_PORT_TYPE
+caracter[1] << buffer_rx[1].DB_MAX_OUTPUT_PORT_TYPE
+caracter[2] << buffer_rx[2].DB_MAX_OUTPUT_PORT_TYPE
+caracter[3] << buffer_rx[3].DB_MAX_OUTPUT_PORT_TYPE
+caracter[4] << buffer_rx[4].DB_MAX_OUTPUT_PORT_TYPE
+caracter[5] << buffer_rx[5].DB_MAX_OUTPUT_PORT_TYPE
+caracter[6] << buffer_rx[6].DB_MAX_OUTPUT_PORT_TYPE
+caracter[7] << buffer_rx[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|uart_controller|sync:SYNC_INST
+clk => pulse~reg0.CLK
+rst => pulse~reg0.ACLR
+pulse <= pulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

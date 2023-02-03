@@ -1,0 +1,7 @@
+
+State Machine - |uart_controller|state
+Name state.STOP_S state.RECEIVING_S state.START_S state.IDDLE_S 
+state.IDDLE_S 0 0 0 0 
+state.START_S 0 0 1 1 
+state.RECEIVING_S 0 1 0 1 
+state.STOP_S 1 0 0 1 

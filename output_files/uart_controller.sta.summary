@@ -1,0 +1,53 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'sync:SYNC_INST|pulse'
+Slack : -2.160
+TNS   : -60.065
+
+Type  : Slow 1200mV 85C Model Hold 'sync:SYNC_INST|pulse'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -4.403
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sync:SYNC_INST|pulse'
+Slack : -1.403
+TNS   : -43.493
+
+Type  : Slow 1200mV 0C Model Setup 'sync:SYNC_INST|pulse'
+Slack : -1.910
+TNS   : -53.198
+
+Type  : Slow 1200mV 0C Model Hold 'sync:SYNC_INST|pulse'
+Slack : 0.288
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -4.403
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sync:SYNC_INST|pulse'
+Slack : -1.403
+TNS   : -43.493
+
+Type  : Fast 1200mV 0C Model Setup 'sync:SYNC_INST|pulse'
+Slack : -0.353
+TNS   : -7.723
+
+Type  : Fast 1200mV 0C Model Hold 'sync:SYNC_INST|pulse'
+Slack : 0.139
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -4.076
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sync:SYNC_INST|pulse'
+Slack : -1.000
+TNS   : -31.000
+
+------------------------------------------------------------

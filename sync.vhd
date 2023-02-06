@@ -16,7 +16,7 @@ end sync;
 
 architecture rtl of sync is
     constant CLK_Hz: integer :=50000000;
-    constant CUENTA: integer :=CLK_Hz/(BAUDRATE*N);
+    constant CUENTA: integer :=10;--:=CLK_Hz/(BAUDRATE*N);
     signal counter : integer range 0 to CUENTA;
     
 begin
@@ -32,7 +32,7 @@ begin
                 pulse <= '1';
                 counter <= 0;
             else
-                pulse <= '1';
+                pulse <= '0';
                 counter <= counter +1;
             end if;
         end if;

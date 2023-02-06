@@ -21,6 +21,7 @@ architecture rtl of uart_controller is
 
     type state_type is (IDDLE_S, START_S, RECEIVING_S, STOP_S);
     signal state : state_type;
+     signal leds : std_logic_vector(2 downto 0);
     signal pulse : std_logic;
     signal registro_rx : std_logic_vector(BITS-1 downto 0 );
     signal buffer_rx : std_logic_vector(BITS-1 downto 0);
@@ -32,7 +33,7 @@ architecture rtl of uart_controller is
 
 begin
 
-    SYNC_INST: work.sync generic map(
+    SYNC_INST: entity work.sync generic map(
         BAUDRATE => BAUD_RATE,
         N => N
     )
@@ -48,16 +49,19 @@ begin
             registro_rx <= (others=>'0');
             buffer_rx <= (others => '0');
             state <= IDDLE_S;
+            leds <= "000";
         elsif(rising_edge(pulse))then
             case state is
                 when IDDLE_S =>
                     cont_pulses<=(others=>'0');
                     cont_bits<=(others=>'0');
                     registro_rx <= (others=>'0');
+                     leds <= "000";
                     if(rx='0')then
                         state <= START_S;
                     end if;
                 when START_S =>
+                 leds <= "001";
                     if (cont_pulses<CANTIDAD_PULSOS/2) then
                         cont_pulses <= cont_pulses +1;
                     else
@@ -69,6 +73,7 @@ begin
                         end if;
                     end if;
                 when RECEIVING_S =>
+                 leds <= "010";
                     if (cont_pulses < CANTIDAD_PULSOS) then
                         cont_pulses <= cont_pulses + 1;
                     else
@@ -82,6 +87,7 @@ begin
                         end if;
                     end if;
                 when STOP_S =>
+                 leds <= "011";
                     if (cont_pulses < CANTIDAD_PULSOS) then
                         cont_pulses <= cont_pulses + 1;
                     else
